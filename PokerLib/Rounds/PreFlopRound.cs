@@ -11,7 +11,7 @@ public class PreFlopRound : Round
     {
         foreach (var player in lobby.Players)
         {
-            deck.CardInHand.Add(player, new Card[]
+            deck.CardsInHandPlayer.Add(player, new Card[]
             {
                     deck.GetShuffleCard(),
                     deck.GetShuffleCard()

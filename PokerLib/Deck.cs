@@ -5,8 +5,9 @@ namespace PokerLib;
 public class Deck
 {
     private List<Card> _allCards  = new List<Card>();
-    public readonly Dictionary<Player, Card[]> CardInHand = new Dictionary<Player, Card[]>();
+    public readonly Dictionary<Player, Card[]> CardsInHandPlayer = new Dictionary<Player, Card[]>();
     public readonly List<Card> CardsOnTable = new List<Card>();
+    public int Pot;
     public Deck()
     {
         CreateNewCardDesk();
@@ -14,7 +15,7 @@ public class Deck
     private void CreateNewCardDesk()
     {
         _allCards = Enum.GetValues<Suits>()
-            .SelectMany(color => Enum.GetValues<Cards>()
+            .SelectMany(color => Enum.GetValues<Rank>()
                 .Select(card => new Card(color, card)))
             .ToList();
     }
@@ -30,8 +31,8 @@ public class Deck
     public void ClearDeck()
     {
         CreateNewCardDesk();
-        CardInHand.Clear();
+        CardsInHandPlayer.Clear();
         CardsOnTable.Clear();
+        Pot = 0;
     }
-
 }

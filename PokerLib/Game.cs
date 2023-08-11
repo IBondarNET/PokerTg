@@ -7,7 +7,6 @@ public class Game
     private readonly Lobby _lobby;
     private readonly Deck _deck;
     private readonly Round[] _rounds;
-    public decimal Pot;
 
     public Game(Lobby lobby)
     {

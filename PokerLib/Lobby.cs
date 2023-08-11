@@ -6,7 +6,7 @@ public class Lobby
     public readonly int MaxCountPlayers;
     public readonly bool IsFreeLobby;
     public readonly int StartChips;
-    public readonly decimal BigBlind;
+    public readonly int BigBlind;
     public decimal PrizePool { get; private set; } = decimal.Zero;
     public List<Player> Players { get;} = new List<Player>();
 
@@ -16,7 +16,7 @@ public class Lobby
         StartChips = startChips;
         BuyIn = buyIn;
         IsFreeLobby = isFreeLobby;
-        BigBlind = decimal.Parse(startChips.ToString()) / 100;
+        BigBlind = StartChips / 100;
     }
 
     public void AddPlayer(Player player)

@@ -1,9 +1,8 @@
 namespace PokerLib.Enums;
 
-public enum Cards
+public enum Rank
 {
-    Ace,
-    Two,
+    Two = 2,
     Three,
     Four,
     Five,
@@ -14,5 +13,6 @@ public enum Cards
     Ten,
     Jack,
     Queen,
-    King
+    King,
+    Ace
 }
